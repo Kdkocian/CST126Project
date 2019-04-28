@@ -1,10 +1,10 @@
 <?php
 class myfuncs{
     function dbConnect() {
-        $servername = 'localhost';
-        $username = 'bubblepop';
-        $password = 'bubbles';
-        $dbname = 'blog';
+        $servername = 'us-cdbr-iron-east-02.cleardb.net';
+        $username = 'b6ffb30b240cf8';
+        $password = '95210590';
+        $dbname = 'heroku_7993010182d04ea';
         //creates connection
        $conn =  mysqli_connect($servername, $username, $password, $dbname);
         //tests the connection

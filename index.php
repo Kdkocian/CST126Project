@@ -16,7 +16,7 @@ $conn = $db -> dbConnect();
 
     $sql = "SELECT * FROM posts ORDER BY post_ID ";
 
-    $res = mysqli_query($conn, $sql) or die (mysqli_error());
+    $res = mysqli_query($conn, $sql) or die (mysqli_connect_error());
 
     $posts = "";
 
