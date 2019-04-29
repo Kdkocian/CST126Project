@@ -20,7 +20,7 @@ if(isset($_POST['post'])){
     }
     mysqli_query($conn, $sql);
 
-    header("Location: index.php");
+    header("Location: postview.php");
     }
     //language filter for the blog
     function filterwords($content){
