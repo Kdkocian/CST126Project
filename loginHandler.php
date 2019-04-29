@@ -1,7 +1,6 @@
 <?php
 session_start();
 $blank = "";
-$error = "";
 $Uname = "";
 $Pword = "";
 include 'db.php';

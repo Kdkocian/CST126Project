@@ -1,11 +1,4 @@
 <?php
-
-$blank = "";
-$servername = 'localhost';
-$username = 'bubblepop';
-$password = 'bubbles';
-$dbname ="users";
-$fname = "";
 $lname = "";
 $uname = "";
 $pword = "";
@@ -20,11 +13,17 @@ $lname = mysqli_real_escape_string($conn, $_POST['lname']);
 $uname = mysqli_real_escape_string($conn, $_POST['uname']);
 $pword = mysqli_real_escape_string($conn, $_POST['pword']);
 
-if ("$fname" == ($blank or NULL)){
+if ("$fname" == (NULL)){
     echo " The First Name cannot be blank ";
 }
-if ("$lname" == ($blank or NULL)){
+if ("$lname" == (NULL)){
     echo " The Last Name cannot be blank ";
+}
+if ("$uname" == (NULL)){
+    echo "Please submit a username";
+}
+if ("$pword" == (NULL)){
+    echo "Please submit a password";
 }
 
 // first check the database to make sure
