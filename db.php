@@ -13,5 +13,13 @@ class myfuncs{
         }
         return $conn;
     }
+    function setUserID($id){
+        session_start();
+        $_SESSION["id"] = $id;
+    }
+    function getUserID(){
+        session_start();
+        return $_SESSION["id"];
+    }
 }
 ?>
