@@ -30,7 +30,7 @@ $conn = $db -> dbConnect();
             $output = $bbcode->Parse($content);
 
             echo "<div><a href='view_post.php?pid=$id'>$title</a><p>$date</p><p>$output</p></div>";
-            echo "<a href='edit_post.php?pid=$id'>Edit</a></div>";
+            echo "<div><a href='edit_post.php?pid=$id'>Edit</a></div>";
         }
         echo $posts;
     } else {

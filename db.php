@@ -21,5 +21,13 @@ class myfuncs{
         session_start();
         return $_SESSION["id"];
     }
+    function getUseradmin(){
+        session_start();
+        return $_SESSION["isadmin"];
+    }
+    function setUseradmin($admin){
+        session_start();
+        return $_SESSION["isadmin"] = $admin;
+    }
 }
 ?>
