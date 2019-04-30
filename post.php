@@ -21,7 +21,7 @@ if(isset($_POST['post'])){
     mysqli_query($conn, $sql);
 
     header("Location: postview.php");
-    }
+   }
     //language filter for the blog
     function filterwords($content){
         $filterWords = array('dagnabit','floop','dangit');
