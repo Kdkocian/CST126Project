@@ -1,9 +1,18 @@
 <?php
+session_start();
 include 'db.php';
 $db = new myfuncs();
 $conn = $db -> dbConnect();
 
-//$id = mysqli_real_escape_string($conn, $_GET['pid']);
+if(!isset($_SESSION['USERNAME'])){
+    header("Location: login.html");
+    return;
+}
+if(!isset($_GET['pid'])){
+    header('Location: index.html');
+}
+
+$pid = $_GET['pid'];
 
 if(isset($_POST['update'])){
     $title = strip_tags($_POST['article_title']);
@@ -11,11 +20,37 @@ if(isset($_POST['update'])){
     
     $title = mysqli_real_escape_string($conn, $title);
     $content = mysqli_real_escape_string($conn, $content);
+    
 $sql = "UPDATE posts SET article_title='$title', post_content='$content'";
+
 }
 
 mysqli_query($conn, $sql);
 
-
 header("Location: edit_post.php");
 ?>
+<html>
+<head>
+</head>
+<body>
+<?php
+$sql_get = "SELECT * FROM posts WHERE id=$pid LIMIT 1";
+$res = mysqlI_quert($conn, $sql_get);
+
+            if(mysqli_num_rows($res) > 0){
+                while ($row = mysqli_fetch_assoc($res)){
+                    $title = $row['article_title'];
+                    $content = $row['content'];
+                    
+                  echo  "<form action='edit_post.php?pid=$pid' method='post' enctype='multipart/form-data'>";
+                  echo  "<input placeholder='Title' name='title' type='text' value='$title' autofocus size='48'><br /><br />";
+                  echo  "<textarea placeholder='Content' name='content' rows='20' cols='50'>$content</textarea><br /?";
+                    
+                }
+            }
+            
+            ?>
+                <input name="update" type="submit" value="Update">	
+</form>
+</body>
+</html>
