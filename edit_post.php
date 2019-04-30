@@ -4,17 +4,8 @@ include 'db.php';
 $db = new myfuncs();
 $conn = $db -> dbConnect();
 
-if(!isset($_SESSION['USERNAME'])){
-    header("Location: login.html");
-    return;
-}
-if(!isset($_GET['pid'])){
-    header('Location: index.html');
-}
-
 $pid = $_GET['pid'];
 
-if(isset($_POST['update'])){
     $title = strip_tags($_POST['article_title']);
     $content = strip_tags($_POST['post_content']);
     
@@ -23,7 +14,6 @@ if(isset($_POST['update'])){
     
 $sql = "UPDATE posts SET article_title='$title', post_content='$content'";
 
-}
 
 mysqli_query($conn, $sql);
 
@@ -47,9 +37,9 @@ $res = mysqlI_quert($conn, $sql_get);
                   echo  "<textarea placeholder='Content' name='content' rows='20' cols='50'>$content</textarea><br /?";
                     
                 }
+              echo " <input name='update' type='submit' value='Update'>";
+              echo " </form>";
             }           
 ?>
-                <input name="update" type="submit" value="Update">	
-</form>
 </body>
 </html>
