@@ -40,7 +40,7 @@ if(isset($_POST['post'])){
     <input placeholder="Title" name="title" type="text" autofocus size="48"><br /><br />
     <textarea placeholder="Content" name="content" rows="20" cols="50"></textarea><br />
     <input name="post" type="submit" value="Post">
-    <input type="button" value ="View Posts" onclick="Location: 'postview.php">
+    <input type="button" value ="View Posts" onclick="Location: postview.php">
 </form>
 </body>
 </html>
