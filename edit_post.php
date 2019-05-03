@@ -1,5 +1,3 @@
-<?php 
-//WORK IN PROGRESS!!!!!!!!
 <?php
 session_start();
 include 'db.php';
@@ -19,3 +17,4 @@ if(isset($_POST['update'])){
 }
 mysqli_query($conn, $sql);
 header("Location: postview.php");
+?>
