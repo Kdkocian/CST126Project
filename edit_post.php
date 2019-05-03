@@ -1,20 +1,23 @@
 <?php
-session_start();
-include 'db.php';
-$db = new myfuncs();
-$conn = $db -> dbConnect();
-//$id = mysqli_real_escape_string($conn, $_GET['pid']);
-
 $pid = $_GET['pid'];
-if(isset($_POST['Edit'])){
-    $title = ($_POST['article_title']);
-    $content = ($_POST['post_content']);
-    
-    $title = mysqli_real_escape_string($conn, $title);
-    $content = mysqli_real_escape_string($conn, $content);
-    
-    $sql = "UPDATE posts SET article_title='$title', post_content='$content'";
-}
-mysqli_query($conn, $sql);
-header("Location: postview.php");
+$title = $_GET['title'];
+$content = $_GET['content'];
+?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>All Posts</title>
+	</head>
+	<body>
+		<form action="editpostcontroller.php" method="POST" enctype="multipart/form-data">
+		<?php 
+		echo '<input placeholder="Title" name="title" type="text" value="'.$title.'"autofocus size="48"><br /><br />';
+		echo '<textarea placeholder="Content" name="content" value="'.$content.'"rows="20" cols="50"></textarea><br />';
+		echo '<input type="hidden" name="pid" value="'.$pid.'"/>';
+		?>
+        	<input name="edit" type="submit" value="edit">
+	</body>
+</html>
 ?>
