@@ -31,6 +31,7 @@ $conn = $db -> dbConnect();
 
             echo "<div><a href='view_post.php?pid=$id'>$title</a><p>$date</p><p>$output</p></div>";
             echo "<div><a href='del_post.php?pid=$id'>Delete</a>&nbsp</div>";
+            echo "<div><a href='adminmanagement.php?pid=$id'>Management</a>&nbsp</div>";
         }
         echo $posts;
     } else {
