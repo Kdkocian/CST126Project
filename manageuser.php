@@ -3,6 +3,7 @@ include 'dp.php';
 $db = new myfuncs();
 $conn = $db ->dbConnect();
 $id = mysqli_real_escape_string($conn, $_POST['ID']);
+echo "hello nathan";
 if(isset($_POST['Make Admin'])){
 $sql = "SELECT * FROM users WHERE ID = '$id'";
 $result = mysqli_query($conn, $sql);
