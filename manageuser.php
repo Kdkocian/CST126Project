@@ -2,8 +2,8 @@
 include 'dp.php';
 $db = new myfuncs();
 $conn = $db ->dbConnect();
-if(isset($_POST['Make Admin'])){
 $id = mysqli_real_escape_string($conn, $_POST['ID']);
+if(isset($_POST['Make Admin'])){
 $sql = "SELECT * FROM users WHERE ID = '$id'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_row($result);
