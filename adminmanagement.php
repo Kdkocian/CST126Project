@@ -7,11 +7,13 @@ $db = new myfuncs();
 </head>
 <body>
 <table>
-<tr><th>ID</th><th>Username</th></tr>
+<tr><th>ID</th><th>Username</th><th>Delete/Change User</th></tr>
 <?php
 $user = $db->getAllusers();
 for($id = 0;$id < count($user);$id++){
-    echo "<tr><td>".$user[$id][0]."</td><td>".$user[$id][1]."</td></tr>";
+    echo "<tr><td>".$user[$id][0]."</td><td>".$user[$id][1]."</td>";
+    echo "<td><input type='button' value='Delete' onclick='deluser.php?id='".$user[$id][0]."'/>";
+    echo "<input type='button' value='Make Admin' onclick='deluser.php?id='".$user[$id][0]."'/></td></tr>";
 }
 ?>
 </table>
