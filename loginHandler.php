@@ -30,4 +30,5 @@ if ("$Pword" == ($blank or NULL)){
         $message = 'Login Failed';
         include 'loginFailed.php';
     }
+    mysqli_close($conn);
     ?>

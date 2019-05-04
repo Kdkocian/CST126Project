@@ -37,6 +37,7 @@ $conn = $db -> dbConnect();
     } else {
         echo "There are no posts to display!";
     }
+    mysqli_close($conn);
     ?>
 </body>
 </html>
