@@ -14,7 +14,7 @@ $content = $_GET['content'];
 		<form action="editpostcontroller.php" method="POST" enctype="multipart/form-data">
 		<?php 
 		echo '<input placeholder="Title" name="title" type="text" value="'.$title.'"autofocus size="48"><br /><br />';
-		echo '<textarea placeholder="Content" name="content" value="'.$content.'"rows="20" cols="50"></textarea><br />';
+		echo '<textarea placeholder="Content" name="content" rows="20" cols="50">'.$content.'</textarea><br />';
 		echo '<input type="hidden" name="pid" value="'.$pid.'"/>';
 		?>
         	<input name="edit" type="submit" value="edit">
