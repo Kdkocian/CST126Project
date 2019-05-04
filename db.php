@@ -29,5 +29,19 @@ class myfuncs{
         session_start();
         return $_SESSION["isadmin"] = $admin;
     }
+    function getAllusers(){
+        $db = new myfuncs();
+        $conn = $db->dbConnect();
+        $sql = "SELECT ID, USERNAME FROM users";
+        $users = array();
+        $result = mysqli_query($conn, $sql);
+        
+        while ($row = mysqli_fetch_array($result)){
+            $users[] = array($row['ID'], $row['USERNAME']);
+        }
+        mysqli_close($conn);
+        return $users;
+    }
 }
+
 ?>
