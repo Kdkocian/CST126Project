@@ -7,8 +7,8 @@ $id = mysqli_escape_string($conn, $_POST['pid']);
 $title = mysqli_escape_string($conn, $_POST['title']);
 $content = mysqli_escape_string($conn, $_POST['content']);
 
-$sql = "UPDATE posts SET title = '$title' and content = '$content' WHERE id = '$id'";
+$sql = "UPDATE posts SET article_title = '$title' and post_content = '$content' WHERE post_ID = '$id'";
 
 mysqli_query($conn, $sql);
-header("Location: postview.php")
+header("Location: postview.php");
 ?>
