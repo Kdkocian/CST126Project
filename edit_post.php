@@ -18,6 +18,6 @@ $content = $_GET['content'];
 		echo '<input type="hidden" name="pid" value="'.$pid.'"/>';
 		?>
         	<input name="edit" type="submit" value="edit">
+        	</form>
 	</body>
 </html>
-?>
