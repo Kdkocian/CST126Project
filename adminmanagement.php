@@ -12,8 +12,8 @@ $db = new myfuncs();
 $user = $db->getAllusers();
 for($id = 0;$id < count($user);$id++){
     echo "<tr><td>".$user[$id][0]."</td><td>".$user[$id][1]."</td>";
-    echo "<td><input type='button' value='Delete' onclick='window.location.href=\'manageuser.php?id='".$user[$id][0]."\''/>";
-    echo "<input type='button' value='Make Admin' onclick='window.location.href=\'manageuser.php?id='".$user[$id][0]."\''/></td></tr>";
+    echo "<td><input type='button' value='Delete' onclick='window.location.href=\"manageuser.php?id='".$user[$id][0]."\"'/>";
+    echo "<input type='button' value='Make Admin' onclick='window.location.href=\"manageuser.php?id='".$user[$id][0]."\"'/></td></tr>";
 }
 ?>
 </table>
