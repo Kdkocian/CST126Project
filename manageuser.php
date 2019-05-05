@@ -5,11 +5,10 @@ $conn = $db -> dbConnect();
 
 $id = mysqli_real_escape_string($conn, $_POST['ID']);
 
-if(isset($_POST['Make Admin'])){
-    echo "hello";
+if($_POST['Make Admin'] == 'Make Admin'){
     $sql = "UPDATE users SET admin = 1 WHERE ID ='$id';";
     mysqli_query($conn,$sql);
 }
 mysqli_close($conn);
-//header( "Location: adminmanagement.php");
+header( "Location: adminmanagement.php");
 ?>
