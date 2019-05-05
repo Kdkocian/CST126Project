@@ -11,9 +11,10 @@ if(isset($_POST['Make Admin'])){
     
     $row = mysqli_fetch_row($result);
     
-    $adminstatus = (int)!$row['admin'];
+    $adminstatus = !$row['admin'];
+    $admin = (int)$adminstatus;
     
-    $sql = "UPDATE users SET admin = '$adminstatus' WHERE ID ='$id';";
+    $sql = "UPDATE users SET admin = '$admin' WHERE ID ='$id';";
     mysqli_query($conn,$sql);
 }
 mysqli_close($conn);
