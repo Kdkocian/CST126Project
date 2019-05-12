@@ -46,6 +46,7 @@ if(isset($_POST['post'])){
     }
     if(!$db->getUseradmin()){
       echo " <input type=\"button\" value =\"View Posts\" onclick=\"window.location.href='postview.php'\">";
+      echo " <input type =\"button\" value =\"To Search\" onclick=\"window.location.href='searchpage.html'\">";
     }
     ?>
 </form>
