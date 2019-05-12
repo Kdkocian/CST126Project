@@ -43,10 +43,10 @@ if(isset($_POST['post'])){
     <?php 
     if($db->getUseradmin()){
         echo "<input type=\"button\" value =\"View Posts\" onclick=\"window.location.href='adminview.php'\">";
+        echo " <input type =\"button\" value =\"To Search\" onclick=\"window.location.href='searchpage.html'\">";
     }
     if(!$db->getUseradmin()){
       echo " <input type=\"button\" value =\"View Posts\" onclick=\"window.location.href='postview.php'\">";
-      echo " <input type =\"button\" value =\"To Search\" onclick=\"window.location.href='searchpage.html'\">";
     }
     ?>
 </form>
