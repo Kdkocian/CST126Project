@@ -55,5 +55,18 @@ class myfuncs{
         mysqli_close($conn);
         return $users;
 }
+function getComments($comment){
+    $db = new myfuncs();
+    $conn = $db -> dbConnect();
+    $comments = mysqli_real_escape_string($conn, $comment);
+    $sql = "SELECT * FROM comments WHERE comment_ID  = postID";
+    $comments = array();
+    $result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_array($result)){
+        $comments[] = array($row['comment_ID'], $row['userID'], $row['postID']);
+    }
+    mysqli_close($conn);
+    return $comments;
+}
 }
 ?>
