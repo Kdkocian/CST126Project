@@ -2,7 +2,7 @@
 include 'db.php';
 $getuser = new myfuncs();
 $searchresult = $_POST['SearchBar'];
-$user = $getuser->getUsersbyFirstNAME($searchresult);
+$user = $getuser->getPostbyId($searchresult);
 ?>
 
 <html>
