@@ -46,7 +46,7 @@ class myfuncs{
         $db = new myfuncs();
         $conn = $db -> dbConnect();
         $searchresult = mysqli_real_escape_string($conn, $searchbar);
-        $sql = "SELECT * FROM posts WHERE post_content LIKE '%$searchresult%'";
+        $sql = "SELECT * FROM posts WHERE post_content LIKE '%$searchresult%' or post_content LIKE '%$searchresult%'";
         $users = array();
         $result= mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result)){
