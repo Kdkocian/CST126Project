@@ -1,5 +1,5 @@
 <table>
-<tr><th>ID</th> <th>First Name</th> <th>Last Name</th></tr>
+<tr><th>ID</th> <th>Last Name</th></tr>
 <?php
 if(count($user) == 0){
    echo "<tr><td>null</td><td>null</td><td>null</td></tr>";
