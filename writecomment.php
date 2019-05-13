@@ -23,7 +23,7 @@ $comment = $_GET['comment_content'];
 		echo '<textarea placeholder="comment" name="comment" rows="20" cols="50">'.$content.'</textarea><br />';
 		echo '<input type="hidden" name="pid" value="'.$pid.'"/>';
 		?>
-        	<input name="edit" type="submit" value="edit">
+        	<input name="comment" type="submit" value="comment">
         	</form>
 </body>
 </html>
