@@ -3,7 +3,9 @@ require_once 'commenthandler.php';
 include_once("db.php");
 $db = new myfuncs();
 $conn = $db -> dbConnect();
-
+$pid = $_GET['pid'];
+$title = $_GET['title'];
+$content = $_GET['content'];
 $comment = $_GET['comment_content'];
 
 ?>

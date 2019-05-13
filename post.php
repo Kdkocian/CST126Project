@@ -44,11 +44,9 @@ if(isset($_POST['post'])){
     if($db->getUseradmin()){
         echo "<input type=\"button\" value =\"View Posts\" onclick=\"window.location.href='adminview.php'\">";
         echo " <input type =\"button\" value =\"To Search\" onclick=\"window.location.href='searchpage.html'\">";
-        echo "<div><a href='writecomment.php?pid-$id'>$title</a><p>$date</p><p>$output</p></div>";
     }
     if(!$db->getUseradmin()){
       echo " <input type=\"button\" value =\"View Posts\" onclick=\"window.location.href='postview.php'\">";
-      echo "<div><a href='writecomment.php?pid-$id'>$title</a><p>$date</p><p>$output</p></div>";
     }
     ?>
 </form>
