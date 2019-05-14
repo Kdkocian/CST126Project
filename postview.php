@@ -31,7 +31,7 @@ $conn = $db -> dbConnect();
 
             echo "<div><a href='view_post.php?pid=$id'>$title</a><p>$date</p><p>$output</p></div>";
             echo "<div><a href='edit_post.php?pid=$id&title=$title&content=$content'>Edit</a></div>";
-            echo "<div><a href='writecomment.php?pid-$id'>$title</a><p>$date</p><p>$output</p></div>";
+            echo "<div><a href='comment.php?pid=$id'>Comment</a></div>";
         }
         echo $posts;
     } else {
