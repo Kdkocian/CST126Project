@@ -6,11 +6,11 @@
 </head>
 <body>
 <?php
-echo "<form action = 'commenthandler.php' method = 'Post'>
-    <input type='hidden' name = 'postID' value='".$_GET['pid']."'>
-    <textarea name='comment_content'></textarea><br>
-    <input type = 'submit' name='submit' value = 'Comment'>
-</form>";
+echo "<form action = 'commenthandler.php' method = 'Post'>";
+echo "<input type='hidden' name = 'postID' value='".$_GET['pid']."'>";
+echo "<textarea name='comment_content'></textarea><br>";
+echo "<input type = 'submit' name='submit' value = 'Comment'>";
+echo "</form>";
 ?>
 </body>
 </html>
