@@ -10,10 +10,10 @@ $userID = mysqli_real_escape_string($conn, $db->getUserID());
 $sql = "INSERT into comments (postID, comment_content, userID)  values ($postID, $commentContent, $userID)";
 
 mysqli_query($conn, $sql);
-/*if($db->getUseradmin()){
+if($db->getUseradmin()){
     header("Location: adminview.php");
 }else {
     header("Location: postview.php");
-}*/
+}
 mysqli_close($conn);
 ?>
