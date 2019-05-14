@@ -12,12 +12,20 @@ $sql = "INSERT INTO comments (comment_content, postID, userID) VALUES ('$comment
 if($commentContent = "null"){
     echo " Please complete your comment.";
 } else {
-mysqli_query($conn, $sql);
+    if (mysqli_query($conn, $sql)) {
+        if($db->getUseradmin()){
+            header("Location: adminview.php");
+        }else {
+            header("Location: postview.php");
+        } 
+    } else {
+        echo "there is no connection";
+    }
 }
-if($db->getUseradmin()){
+/*if($db->getUseradmin()){
     header("Location: adminview.php");
 }else {
     header("Location: postview.php");
-}
+}*/
 mysqli_close($conn);
 ?>
