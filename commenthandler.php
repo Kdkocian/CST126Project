@@ -10,7 +10,7 @@ $userID = mysqli_real_escape_string($conn, $db->getUserID());
 
 $sql = "INSERT INTO comments (comment_content, postID, userID) VALUES ('$commentContent', '$postID', '$userID')";
 echo "$commentContent";
-if($commentContent == "null"){
+if($commentContent == null){
     echo " Please complete your comment.";
 } else {
     if (mysqli_query($conn, $sql)) {
