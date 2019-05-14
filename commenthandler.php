@@ -7,8 +7,12 @@ $postID = mysqli_real_escape_string($conn, $_POST['pid']);
 $commentContent = mysqli_real_escape_string($conn, $_POST['commentcontent']);
 $userID = mysqli_real_escape_string($conn, $db->getUserID());
 
-$sql = "INSERT into comments (postID, comment_content, userID)  values ($postID, $commentContent, $userID)";
 
+$sql = "INSERT into comments (postID, comment_content, userID)  values ('$postID', '$commentContent', '$userID')";
+if($commentContent = "null"){
+    echo " Please complete your post.";
+    return;
+}
 mysqli_query($conn, $sql);
 if($db->getUseradmin()){
     header("Location: adminview.php");
