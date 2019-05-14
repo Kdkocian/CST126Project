@@ -12,9 +12,9 @@ $userID = mysqli_real_escape_string($conn, $db->getUserID());
 $sql = "INSERT INTO comments (commentID, comment_content, postID, userID) VALUE ('$commentID', '$commentContent', '$postID', '$userID')";
 if($commentContent = "null"){
     echo " Please complete your comment.";
-} else {
-mysqli_query($conn, $sql);
+    return;
 }
+mysqli_query($conn, $sql);
 if($db->getUseradmin()){
     header("Location: adminview.php");
 }else {
