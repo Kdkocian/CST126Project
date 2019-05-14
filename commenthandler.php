@@ -3,6 +3,9 @@ include 'db.php';
 $db = new myfuncs();
 $conn = $db -> dbConnect();
 if(isset($_POST('Post'))){
+    include 'db.php';
+    $db = new myfuncs();
+    $conn = $db -> dbConnect();
 $commentID = mysqli_real_escape_string($conn, $_GET['commentID']);
 $postID = mysqli_real_escape_string($conn, $_POST['pid']);
 $commentContent = mysqli_real_escape_string($conn, $_POST['comment_content']);
