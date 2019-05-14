@@ -13,8 +13,9 @@ $sql = "INSERT INTO comments (commentID, comment_content, postID, userID) values
 if($commentContent = "null"){
     echo " Please complete your comment.";
     return;
-}
+} else {
 mysqli_query($conn, $sql);
+}
 if($db->getUseradmin()){
     header("Location: adminview.php");
 }else {
