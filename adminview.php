@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../db.php");
+include_once("db.php");
 $db = new myfuncs();
 $conn = $db -> dbConnect();
 
@@ -10,7 +10,7 @@ $conn = $db -> dbConnect();
 </head>
 <body>
     <?php
-    require_once("../nbbc/nbbc.php");
+    require_once("nbbc/nbbc.php");
 
     $bbcode = new BBCode;
 
@@ -30,14 +30,14 @@ $conn = $db -> dbConnect();
             $output = $bbcode->Parse($content);
 
             echo "<div><a href='view_post.php?pid=$id'>$title</a><p>$date</p><p>$output</p></div>";
-            echo "<div><a href='edit_post.php?pid=$id&title=$title&content=$content'>Edit</a></div>";
-            echo "<div><a href='writecomment.php?pid-$id'>$title</a><p>$date</p><p>$output</p></div>";
+            echo "<div><a href='del_post.php?pid=$id'>Delete</a></div>";
+            echo "<div><a href='adminmanagement.php?pid=$id'>Management</a></div>";
         }
         echo $posts;
     } else {
         echo "There are no posts to display!";
     }
+    mysqli_close($conn);
     ?>
 </body>
 </html>
-

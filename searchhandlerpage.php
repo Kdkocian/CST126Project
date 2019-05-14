@@ -11,7 +11,7 @@ $user = $getuser->getPostbyId($searchresult);
 </head>
 <body>
 <?php 
-include 'views/_displaysearch.php';
+include '_displaysearch.php';
 ?>
 </body>
 </html>
