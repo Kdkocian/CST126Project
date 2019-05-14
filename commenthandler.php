@@ -3,13 +3,12 @@ include 'db.php';
 $db = new myfuncs();
 $conn = $db -> dbConnect();
 
-$commentID = mysqli_real_escape_string($conn, $_POST['commentID']);
 $postID = mysqli_real_escape_string($conn, $_POST['postID']);
 $commentContent = mysqli_real_escape_string($conn, $_POST['comment_content']);
 $userID = mysqli_real_escape_string($conn, $db->getUserID());
 
 
-$sql = "INSERT INTO comments (commentID, comment_content, postID, userID) VALUE ('$commentID', '$commentContent', '$postID', '$userID')";
+$sql = "INSERT INTO comments (comment_content, postID, userID) VALUES ('$commentContent', '$postID', '$userID')";
 if($commentContent = "null"){
     echo " Please complete your comment.";
 } else {
