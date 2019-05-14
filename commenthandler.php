@@ -8,8 +8,9 @@ $commentContent = strip_tags($_POST['comment_content']);
 
 $commentID = mysqli_real_escape_string($conn, $commentID);
 $commentContent = mysqli_real_escape_string($conn, $commentContent);
+$userID = mysqli_real_escape_string($conn, $db->getUserID());
 
-$sql = "INSERT into comments (commentID, comment_content)  values = ($commentID, $commentContent)";
+$sql = "INSERT into comments (commentID, comment_content, userID)  values = ($commentID, $commentContent, $userID)";
 
 mysqli_query($conn, $sql);
 header("Location: postview.php");
