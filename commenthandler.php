@@ -2,12 +2,9 @@
 include 'db.php';
 $db = new myfuncs();
 $conn = $db -> dbConnect();
-if(isset($_POST('Post'))){
-    include 'db.php';
-    $db = new myfuncs();
-    $conn = $db -> dbConnect();
-$commentID = mysqli_real_escape_string($conn, $_GET['commentID']);
-$postID = mysqli_real_escape_string($conn, $_POST['pid']);
+
+$commentID = mysqli_real_escape_string($conn, $_POST['commentID']);
+$postID = mysqli_real_escape_string($conn, $_POST['postID']);
 $commentContent = mysqli_real_escape_string($conn, $_POST['comment_content']);
 $userID = mysqli_real_escape_string($conn, $db->getUserID());
 
@@ -22,7 +19,6 @@ if($db->getUseradmin()){
     header("Location: adminview.php");
 }else {
     header("Location: postview.php");
-}
 }
 mysqli_close($conn);
 ?>
