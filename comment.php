@@ -8,9 +8,9 @@
 <form action = 'commenthandler.php' method = 'Post'>
 <?php
 echo "<input type='hidden' name = 'postID' value='".$_GET['pid']."'>";
-echo "<textarea name='commentcontent'>Write your comment here.</textarea><br>";
+echo "<textarea name='comment_content'>Write your comment here.</textarea><br>";
 ?>
 <input type = 'submit' name='submitform' value = 'Comment'>
-</form>;
+</form>
 </body>
 </html>

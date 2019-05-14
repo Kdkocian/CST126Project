@@ -4,13 +4,13 @@ $db = new myfuncs();
 $conn = $db -> dbConnect();
 
 $postID = mysqli_real_escape_string($conn, $_POST['pid']);
-$commentContent = mysqli_real_escape_string($conn, $_POST['commentcontent']);
+$commentContent = mysqli_real_escape_string($conn, $_POST['comment_content']);
 $userID = mysqli_real_escape_string($conn, $db->getUserID());
 
 
 $sql = "INSERT into comments (postID, comment_content, userID)  values ('$postID', '$commentContent', '$userID')";
 if($commentContent = "null"){
-    echo " Please complete your post.";
+    echo " Please complete your comment.";
     return;
 }
 mysqli_query($conn, $sql);
