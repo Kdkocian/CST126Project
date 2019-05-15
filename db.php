@@ -82,7 +82,8 @@ function getAllPosts(){
 }
 function getALLComments($id){
     $comments = array();
-    $conn = dbConnect();
+    $db = new myfuncs();
+    $conn = $db -> dbConnect();
     $postID = mysqli_real_escape_string($conn, $id);
     $sql = "SELECT * FROM comments WHERE post_ID = '$postID'";
     $result = mysqli_query($conn, $sql);
