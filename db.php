@@ -61,7 +61,6 @@ function getComments($comment){
     $comments = mysqli_real_escape_string($conn, $comment);
     $sql = "SELECT * FROM comments WHERE postID = post_ID";
     $comments = array();
-    $posts = array();
     $result = mysqli_query($conn, $sql);
     while($row = mysqli_fetch_array($result)){
         $comments[] = array($row['comment_ID'], $row['userID'], $row['postID']);
