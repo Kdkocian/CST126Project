@@ -77,6 +77,7 @@ function getALLComments($id){
         $comments[] = $row['comment_content'];
     }
     return $comments;
+    mysqli_close($conn);
 }
 }
 ?>
