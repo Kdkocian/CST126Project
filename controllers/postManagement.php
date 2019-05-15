@@ -9,7 +9,7 @@
         $content = mysqli_real_escape_string($conn, $db->filterwords($_POST['content']));
         $user = mysqli_real_escape_string($conn, $db->getUserID());
         
-        $sql = "INSERT into posts (post_content, article_title, userID) VALUES('$title', '$content', '$user')";
+        $sql = "INSERT into posts (article_title, post_content, userID) VALUES('$title', '$content', '$user')";
         
             mysqli_query($conn, $sql);
         
