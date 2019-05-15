@@ -10,7 +10,7 @@
 	</head>
     <body>
         <?php
-        if(!getUseradmin())
+        if(!$db->getUseradmin())
         {
             if(count($posts)!=0)
             {       

@@ -13,6 +13,6 @@ while($row = mysqli_fetch_array($result))
 {
     echo $row['article_title']."<br.>".$row['post_content'];
 }
-    echo "<a href='searchpage.php'>Searchpage</a>";
+    echo "<a href='../views/searchpage.php'>Searchpage</a>";
 
 ?>
