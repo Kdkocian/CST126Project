@@ -32,7 +32,7 @@ $conn = $db -> dbConnect();
 
             for($i = 0; $i < count($postcomments); $i++)
             {
-                echo "<p>".$postcomments[$i]."</p>";
+                echo "<p>".$postcomments[$i][0]."</p>";
             }
             echo "<div><a href='view_post.php?pid=$id'>$title</a><p>$date</p><p>$output</p></div>";
             echo "<div><a href='del_post.php?pid=$id'>Delete</a></div>";
