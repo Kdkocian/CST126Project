@@ -15,7 +15,6 @@ $conn = $db -> dbConnect();
     $bbcode = new BBCode;
 
     $sql = "SELECT * FROM posts ORDER BY post_ID ";
-
     $res = mysqli_query($conn, $sql) or die (mysqli_connect_error());
 
     $posts = "";
@@ -26,14 +25,19 @@ $conn = $db -> dbConnect();
             $date = $row['post_date'];
             $content = $row['post_content'];
             $title = $row['article_title'];
-
+            $postcomments = new $db->getALLComments($id);
             $output = $bbcode->Parse($content);
 
             echo "<div><a href='view_post.php?pid=$id'>$title</a><p>$date</p><p>$output</p></div>";
+            for($i = 0; $i < count($postcomments); $i++)
+            {
+                echo "$comments";
+            }
             echo "<div><a href='edit_post.php?pid=$id&title=$title&content=$content'>Edit</a></div>";
             echo "<div><a href='comment.php?pid=$id'>Comment</a></div>";
         }
         echo $posts;
+        echo $postcomments;
     } else {
         echo "There are no posts to display!";
     }
