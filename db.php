@@ -85,7 +85,7 @@ class myfunc
         $sql = "SELECT * FROM comments WHERE postID = '$postID'";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result)){
-            $comments[] = $row['comment_content'];
+            $comments = $row['comment_content'];
         }
         mysqli_close($conn);
         return $comments;
