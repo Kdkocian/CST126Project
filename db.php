@@ -39,7 +39,8 @@ class myfunc
         return $_SESSION["isadmin"] = $admin;
     }
     function getAllusers(){
-        $conn = dbConnect();
+        $db = new myfunc();
+        $conn = $db->dbConnect();
         $sql = "SELECT ID, USERNAME FROM users";
         $users = array();
         $result = mysqli_query($conn, $sql);
@@ -51,7 +52,8 @@ class myfunc
         return $users;
     }
     function getPostbyId($searchbar){;
-        $conn = dbConnect();
+        $db = new myfunc();
+        $conn = $db->dbConnect();
         $searchresult = mysqli_real_escape_string($conn, $searchbar);
         $sql = "SELECT * FROM posts WHERE post_content LIKE '%$searchresult%' or post_content LIKE '%$searchresult%'";
         $users = array();
@@ -64,7 +66,8 @@ class myfunc
     }
     function getAllPosts(){
         $posts = array();
-        $conn = dbConnect();
+        $db = new myfunc();
+        $conn = $db->dbConnect();
         $sql = "Select * from posts orderby post_ID DESC";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result))
@@ -75,7 +78,8 @@ class myfunc
         return $posts;
     }
     function getALLComments($id){  
-        $conn = dbConnect();
+        $db = new myfunc();
+        $conn = $db->dbConnect();
         $comments = array();
         $postID = mysqli_real_escape_string($conn, $id);
         $sql = "SELECT * FROM comments WHERE postID = '$postID'";

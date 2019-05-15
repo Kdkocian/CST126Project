@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h2>Search</h2>
-		<form action="searchhandlerpage.php" method = 'GET'>
+		<form action="../controllers/searchhandlerpage.php" method = 'GET'>
 			<input type="text" name="SearchBar">
 			<input type="submit" name="search" value="search">
 		</form>
