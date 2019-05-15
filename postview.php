@@ -37,7 +37,6 @@ $conn = $db -> dbConnect();
             echo "<div><a href='comment.php?pid=$id'>Comment</a></div>";
         }
         echo $posts;
-        echo $postcomments;
     } else {
         echo "There are no posts to display!";
     }
