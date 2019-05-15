@@ -59,13 +59,37 @@ function getComments($comment){
     $db = new myfuncs();
     $conn = $db -> dbConnect();
     $comments = mysqli_real_escape_string($conn, $comment);
-    $sql = "SELECT * FROM comments WHERE comment_ID  = postID";
+    $sql = "SELECT * FROM comments WHERE postID = post_ID";
     $comments = array();
+    $posts = array();
     $result = mysqli_query($conn, $sql);
     while($row = mysqli_fetch_array($result)){
         $comments[] = array($row['comment_ID'], $row['userID'], $row['postID']);
     }
     mysqli_close($conn);
+    return $comments;
+}
+function getAllPosts(){
+    $posts = array();
+    $conn = dbConnect();
+    $sql = "Select * from posts";
+    $result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_array($result))
+    {
+        $posts[] = array($row['post_ID'], $row['userID'], $row['post_content']);
+    }
+    mysqli_close();
+    return $posts;
+}
+function getALLComments($id){
+    $comments = array();
+    $conn = dbConnect();
+    $postID = mysqli_real_escape_string($conn, $id);
+    $sql = "SELECT * FROM comments WHERE post_ID = '$postID'";
+    $result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_array($result)){
+        $comments[] = $row['comment'];
+    }
     return $comments;
 }
 }
