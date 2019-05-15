@@ -77,7 +77,7 @@ function getAllPosts(){
     {
         $posts[] = array($row['post_ID'], $row['userID'], $row['post_content']);
     }
-    mysqli_close();
+    mysqli_close($conn);
     return $posts;
 }
 function getALLComments($id){
@@ -87,7 +87,7 @@ function getALLComments($id){
     $sql = "SELECT * FROM comments WHERE post_ID = '$postID'";
     $result = mysqli_query($conn, $sql);
     while($row = mysqli_fetch_array($result)){
-        $comments[] = $row['comment'];
+        $comments[] = $row['comment_content'];
     }
     return $comments;
 }
