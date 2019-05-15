@@ -52,8 +52,9 @@
                     echo "<a href='adminManagement.php?pid=".$posts[$i][0]."'>Management </a>";
                     echo "<a href='comment.php?pid=".$posts[$i][0]."'>Comment</a><br/>";
                 }
-                echo $posts;
-            } else {
+            } 
+            else 
+            {
                 echo "There are no posts to display!";
             }
         }
