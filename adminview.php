@@ -26,7 +26,7 @@ $conn = $db -> dbConnect();
             $date = $row['post_date'];
             $content = $row['post_content'];
             $title = $row['article_title'];
-            $postcomments = new $db->getALLComments($id);
+           // $postcomments = new $db->getALLComments($id);
 
             $output = $bbcode->Parse($content);
 
