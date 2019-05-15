@@ -7,7 +7,7 @@
     {
         $title = mysqli_real_escape_string($conn, $_POST['title']);
         $content = mysqli_real_escape_string($conn, filterwords($_POST['content']));
-        $user = mysqli_real_escape_string($conn, getUserID());
+        $user = mysqli_real_escape_string($conn, $db->getUserID());
         
         $sql = "INSERT into posts (post_content, article_title, userID) VALUES('$title', '$content', '$user')";
         if($title != "" && $content != "")

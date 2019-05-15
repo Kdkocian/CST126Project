@@ -68,7 +68,7 @@ class myfunc
         $posts = array();
         $db = new myfunc();
         $conn = $db->dbConnect();
-        $sql = "Select * from posts orderby post_ID DESC";
+        $sql = "Select * from posts";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result))
         {
