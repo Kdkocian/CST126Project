@@ -71,7 +71,7 @@ function getALLComments($id){
     $conn = dbConnect();
     $comments = array();
     $postID = mysqli_real_escape_string($conn, $id);
-    $sql = "SELECT * FROM comments WHERE postID = '$postID'";
+    $sql = "SELECT * FROM comments ORDER BY postID = '$postID'";
     $result = mysqli_query($conn, $sql);
     while($row = mysqli_fetch_array($result)){
         $comments[] = array($row['comment_content']);
