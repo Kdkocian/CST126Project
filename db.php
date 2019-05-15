@@ -1,5 +1,4 @@
 <?php
-class myfuncs{
     function dbConnect() {
         $servername = 'us-cdbr-iron-east-02.cleardb.net';
         $username = 'b6ffb30b240cf8';
@@ -25,13 +24,20 @@ class myfuncs{
         session_start();
         return $_SESSION["isadmin"];
     }
+    function filterwords($content){
+        $filterWords = array('dagnabit','floop','dangit');
+        $filterCount = sizeof($filterWords);
+        for($i=0; $i<$filterCount; $i++){
+            $content = preg_replace('/\b'.$filterWords[$i].'\b/ie',"str_repeat('*',strlen('$0'))",$content);
+        }
+        return $content;
+    }
     function setUseradmin($admin){
         session_start();
         return $_SESSION["isadmin"] = $admin;
     }
     function getAllusers(){
-        $db = new myfuncs();
-        $conn = $db->dbConnect();
+        $conn = dbConnect();
         $sql = "SELECT ID, USERNAME FROM users";
         $users = array();
         $result = mysqli_query($conn, $sql);
@@ -42,9 +48,8 @@ class myfuncs{
         mysqli_close($conn);
         return $users;
     }
-    function getPostbyId($searchbar){
-        $db = new myfuncs();
-        $conn = $db -> dbConnect();
+    function getPostbyId($searchbar){;
+        $conn = dbConnect();
         $searchresult = mysqli_real_escape_string($conn, $searchbar);
         $sql = "SELECT * FROM posts WHERE post_content LIKE '%$searchresult%' or post_content LIKE '%$searchresult%'";
         $users = array();
@@ -54,30 +59,29 @@ class myfuncs{
         }
         mysqli_close($conn);
         return $users;
-}
-function getAllPosts(){
-    $posts = array();
-    $conn = dbConnect();
-    $sql = "Select * from posts";
-    $result = mysqli_query($conn, $sql);
-    while($row = mysqli_fetch_array($result))
-    {
-        $posts[] = array($row['post_ID'], $row['userID'], $row['post_content']);
     }
-    mysqli_close($conn);
-    return $posts;
-}
-function getALLComments($id){  
-    $conn = dbConnect();
-    $comments = array();
-    $postID = mysqli_real_escape_string($conn, $id);
-    $sql = "SELECT * FROM comments ORDER BY postID = '$postID'";
-    $result = mysqli_query($conn, $sql);
-    while($row = mysqli_fetch_array($result)){
-        $comments[] = array($row['comment_content']);
+    function getAllPosts(){
+        $posts = array();
+        $conn = dbConnect();
+        $sql = "Select * from posts orderby post_ID DESC";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result))
+        {
+            $posts[] = array($row['post_ID'], $row['userID'], $row['article_title'], $row['post_content']);
+        }
+        mysqli_close($conn);
+        return $posts;
     }
-    return $comments;
-    mysqli_close($conn);
-}
-}
+    function getALLComments($id){  
+        $conn = dbConnect();
+        $comments = array();
+        $postID = mysqli_real_escape_string($conn, $id);
+        $sql = "SELECT * FROM comments WHERE postID = '$postID'";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result)){
+            $comments[] = array($row['comment_content']);
+        }
+        mysqli_close($conn);
+        return $comments;
+    }
 ?>
