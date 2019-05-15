@@ -10,12 +10,11 @@
         $user = mysqli_real_escape_string($conn, $db->getUserID());
         
         $sql = "INSERT into posts (post_content, article_title, userID) VALUES('$title', '$content', '$user')";
-        if($title != "" && $content != "")
-        {
+        
             mysqli_query($conn, $sql);
-        }
+        
         mysqli_close($conn);
-        header("Location: postview.php");
+        header("Location: ../views/postview.php");
     }
     if(isset($_GET['Delete']))
     {
