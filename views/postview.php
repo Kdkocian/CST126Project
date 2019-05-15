@@ -22,7 +22,7 @@
                     $postcomments = $db->getALLComments($posts[$i][0]);
                     for($j = 0; $j < count($postcomments); $j++)
                     {
-                        echo "<p>".$postcomments[$j]."</p>";
+                        echo "<p>comment: ".$postcomments[$j]."</p>";
                     }
                     echo "<a href='editPost.php?pid=".$posts[$i][0]."&title=".$posts[$i][2]."&content=".$posts[$i][3]."'>Edit </a>";
                     echo "<a href='comment.php?pid=".$posts[$i][0]."'>Comment </a><br/>";
@@ -45,7 +45,7 @@
                     $postcomments = $db->getALLComments($posts[$i][0]);
                     for($j = 0; $j < count($postcomments); $j++)
                     {
-                        echo "<p>".$postcomments[$j]."</p>";
+                        echo "<p>comment: ".$postcomments[$j]."</p>";
                     }
                     
                     echo "<a href='../controllers/postManagement.php?pid=".$posts[$i][0]."&Delete=\"Delete\"'>Delete </a>";
