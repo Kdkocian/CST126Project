@@ -49,7 +49,7 @@
                     }*/
                     
                     echo "<a href='../controllers/postManagement.php?pid=".$posts[$i][0]."&Delete=\"Delete\"'>Delete</a>";
-                    echo "<a href='adminmanagement.php?pid=".$posts[$i][0]."'>Management</a>";
+                    echo "<a href='adminManagement.php?pid=".$posts[$i][0]."'>Management</a>";
                     echo "<a href='comment.php?pid=".$posts[$i][0]."'>Comment</a>";
                 }
                 echo $posts;
