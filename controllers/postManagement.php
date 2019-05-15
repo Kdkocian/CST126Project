@@ -6,7 +6,7 @@
     if(isset($_POST['submitPost']))
     {
         $title = mysqli_real_escape_string($conn, $_POST['title']);
-        $content = mysqli_real_escape_string($conn, $db->filterwords($_POST['content']));
+        $content = mysqli_real_escape_string($conn, $_POST['content']);
         $user = mysqli_real_escape_string($conn, $db->getUserID());
         
         $sql = "INSERT into posts (article_title, post_content, userID) VALUES('$title', '$content', '$user')";
