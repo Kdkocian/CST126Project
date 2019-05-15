@@ -55,19 +55,6 @@ class myfuncs{
         mysqli_close($conn);
         return $users;
 }
-function getComments($comment){
-    $db = new myfuncs();
-    $conn = $db -> dbConnect();
-    $comments = mysqli_real_escape_string($conn, $comment);
-    $sql = "SELECT * FROM comments WHERE postID = post_ID";
-    $comments = array();
-    $result = mysqli_query($conn, $sql);
-    while($row = mysqli_fetch_array($result)){
-        $comments[] = array($row['comment_ID'], $row['userID'], $row['postID']);
-    }
-    mysqli_close($conn);
-    return $comments;
-}
 function getAllPosts(){
     $posts = array();
     $conn = dbConnect();
@@ -80,10 +67,9 @@ function getAllPosts(){
     mysqli_close($conn);
     return $posts;
 }
-function getALLComments($id){
+function getALLComments($id){  
+    $conn = dbConnect();
     $comments = array();
-    $db = new myfuncs();
-    $conn = $db -> dbConnect();
     $postID = mysqli_real_escape_string($conn, $id);
     $sql = "SELECT * FROM comments WHERE post_ID = '$postID'";
     $result = mysqli_query($conn, $sql);
