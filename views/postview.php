@@ -1,6 +1,7 @@
 <?php
     require_once '../db.php';
-    $posts = getAllPosts();
+    $db = new myfunc();
+    $posts = $db->getAllPosts();
 ?>
 
 <html>
@@ -18,7 +19,7 @@
                     
                     echo "<a href='view_post.php?pid=".$posts[$i][0]."'>".$posts[$i][2]."</a>";
                     echo "<p>".$posts[$i][3]."</p>";
-                    $postcomments = getALLComments($posts[$i][0]);
+                    $postcomments = $db->getALLComments($posts[$i][0]);
                     for($i = 0; $i < count($postcomments); $i++)
                     {
                         echo "<p>".$postcomments[$i]."</p>";
@@ -41,7 +42,7 @@
                     echo "<a href='view_post.php?pid=".$posts[$i][0]."'>".$posts[$i][2]."</a>";
                     echo "<p>".$posts[$i][3]."</p>";
                     
-                    $postcomments = getALLComments($posts[$i][0]);
+                    $postcomments = $db->getALLComments($posts[$i][0]);
                     for($i = 0; $i < count($postcomments); $i++)
                     {
                         echo "<p>".$postcomments[$i]."</p>";

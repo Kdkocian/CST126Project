@@ -1,4 +1,6 @@
 <?php
+class myfunc
+{
     function dbConnect() {
         $servername = 'us-cdbr-iron-east-02.cleardb.net';
         $username = 'b6ffb30b240cf8';
@@ -84,4 +86,5 @@
         mysqli_close($conn);
         return $comments;
     }
+}
 ?>

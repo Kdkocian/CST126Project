@@ -1,6 +1,7 @@
 <?php
 require_once '../db.php';
-$conn = dbConnect();
+$db = new myfunc();
+$conn = $db->dbConnect();
 
 $searchresult = mysqli_real_escape_string($conn, $_GET['SearchBar']);
 

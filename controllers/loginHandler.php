@@ -1,6 +1,7 @@
 <?php
     require_once '../db.php';
-    $conn = dbConnect();
+    $db = new myfunc();
+    $conn = $db->dbConnect();
     
     $Uname = mysqli_real_escape_string($conn, $_POST['Uname']);
     $Pword = mysqli_real_escape_string($conn, $_POST['Pword']);
@@ -20,8 +21,8 @@
     
     if ($row['PASSWORD'] == $Pword )
     {    
-        setUseradmin($row['admin']);
-        setUserID($row["ID"]);  
+        $db->setUseradmin($row['admin']);
+        $db->setUserID($row["ID"]);  
         mysqli_close($conn);
         header("Location: ../views/post.php");
     } 

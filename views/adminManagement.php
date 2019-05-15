@@ -1,5 +1,6 @@
 <?php
     require_once '../db.php';
+    $db = new myfunc();
 ?>
 
 <html>
@@ -14,7 +15,7 @@
     	<th>Delete/Change User</th>
 	</tr>
     <?php
-    $user = getAllusers();
+    $user = $db->getAllusers();
     for($id = 0;$id < count($user);$id++){
         echo "<form action = 'manageuser.php' method = 'POST'>";
         echo "<tr>";

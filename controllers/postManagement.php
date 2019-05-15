@@ -1,6 +1,7 @@
 <?php
-    require_once("db.php");
-    $conn = dbConnect();
+    require_once("../db.php");
+    $db = new myfunc();
+    $conn = $db->dbConnect();
     
     if(isset($_POST['submitPost']))
     {
