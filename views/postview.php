@@ -43,7 +43,7 @@
                     echo "<p>".$posts[$i][3]."</p><br/>";
                     
                     $postcomments = $db->getALLComments($posts[$i][0]);
-                    for($i = 0; $i < count($postcomments); $i++)
+                    for($i = 0; $i < count($postcomments); ++$i)
                     {
                         echo "<p>".$postcomments[$i]."</p>";
                     }
