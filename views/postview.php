@@ -42,11 +42,11 @@
                     echo "<a href='view_post.php?pid=".$posts[$i][0]."'>".$posts[$i][2]."</a><br/>";
                     echo "<p>".$posts[$i][3]."</p><br/>";
                     
-                    /*$postcomments = $db->getALLComments($posts[$i][0]);
+                    $postcomments = $db->getALLComments($posts[$i][0]);
                     for($i = 0; $i < count($postcomments); $i++)
                     {
                         echo "<p>".$postcomments[$i]."</p>";
-                    }*/
+                    }
                     
                     echo "<a href='../controllers/postManagement.php?pid=".$posts[$i][0]."&Delete=\"Delete\"'>Delete </a>";
                     echo "<a href='adminManagement.php?pid=".$posts[$i][0]."'>Management </a>";
