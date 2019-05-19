@@ -22,5 +22,5 @@
         
         mysqli_close($conn);
         header("Location: ../views/adminManagement.php");
-    }
+    } 
 ?>

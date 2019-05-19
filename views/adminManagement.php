@@ -28,6 +28,7 @@
         echo '<td><input type = "hidden" name = "ID" value = "'.$user[$id][0].'"><input type="submit" name = "Delete" value="Delete" /></td>';
         echo "</form></tr>";
     }
+    echo "<a href='../views/postview.php'>Back to Post view</a>";
     ?>
     </table>
     </body>
