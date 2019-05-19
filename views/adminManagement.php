@@ -25,7 +25,7 @@
             echo '<input type="submit" name = "MakeAdmin" value="Make Admin" /></td>';
         echo "</form>";
         echo "<form action = '../controllers/userManagement.php' method = 'POST'>";
-        echo '<td><input type = "hidden" name = "Delete" value = "'.$user[$id][0].'"><input type="submit" name = "Delete" value="Delete" /></td>';
+        echo '<td><input type = "hidden" name = "ID" value = "'.$user[$id][0].'"><input type="submit" name = "Delete" value="Delete" /></td>';
         echo "</form></tr>";
     }
     ?>
