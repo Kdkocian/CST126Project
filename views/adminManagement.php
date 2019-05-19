@@ -17,7 +17,7 @@
     <?php
     $user = $db->getAllusers();
     for($id = 0;$id < count($user);$id++){
-        echo "<form action = 'manageuser.php' method = 'POST'>";
+        echo "<form action = '../controllers/userManagement.php' method = 'POST'>";
         echo "<tr>";
             echo "<td>".$user[$id][0]."</td>";
             echo "<td>".$user[$id][1]."</td>";

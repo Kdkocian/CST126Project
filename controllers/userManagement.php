@@ -23,5 +23,4 @@
         mysqli_close($conn);
         header("Location: ../views/adminManagement.php");
     }
-    echo "<a href='postview.php'>Back to Posts</a>";
 ?>
