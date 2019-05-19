@@ -17,7 +17,7 @@
                 for($i=0; $i < count($posts); $i++)
                 {
                     
-                    echo "<p> href='view_post.php?pid=".$posts[$i][0]."'>".$posts[$i][2]."</p><br/>";
+                    echo "<p href='view_post.php?pid=".$posts[$i][0]."'>".$posts[$i][2]."</p><br/>";
                     echo "<p>".$posts[$i][3]."</p><br/>";
                     $postcomments = $db->getALLComments($posts[$i][0]);
                     for($j = 0; $j < count($postcomments); $j++)
@@ -39,7 +39,7 @@
             {
                 for($i=0; $i < count($posts); $i++)
                 {
-                    echo "<a href='view_post.php?pid=".$posts[$i][0]."'>".$posts[$i][2]."</a><br/>";
+                    echo "<p href='view_post.php?pid=".$posts[$i][0]."'>".$posts[$i][2]."</p><br/>";
                     echo "<p>".$posts[$i][3]."</p><br/>";
                     
                     $postcomments = $db->getALLComments($posts[$i][0]);
