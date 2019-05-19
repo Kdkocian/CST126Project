@@ -23,11 +23,5 @@
         mysqli_close($conn);
         header("Location: ../views/adminManagement.php");
     }
+    echo "<a href='postview.php'>Back to Posts</a>";
 ?>
-<html>
-<head>
-</head>
-<body>
-<input type="button" value="View Posts" onclick="window.location.href='postview.php'"/>
-</body>
-</html>
