@@ -30,9 +30,9 @@
         $title = mysqli_real_escape_string($conn, $_POST['title']);
         $content = mysqli_real_escape_string($conn, $_POST['content']);
         
-        $sql = "UPDATE posts SET article_title='$title', post_content='$content', WHERE post_ID='$id'";
+        $sql = "UPDATE posts SET article_title='$title', post_content='$content' WHERE post_ID='$id'";
         mysqli_query($conn, $sql);
         mysqli_close($conn);
-        //header("Location: ../views/postview.php");
+        header("Location: ../views/postview.php");
     }
 ?>
