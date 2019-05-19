@@ -5,7 +5,7 @@
 		<title>All Posts</title>
 	</head>
 	<body>
-		<form action="..postManagement.php" method="POST">
+		<form action="../controllers/postManagement.php" method="POST">
 		<?php 
 		echo '<input name="title" type="text" value="'.$_GET['title'].'"size="48"><br/>';
 		echo '<textarea name="content" rows="20" cols="50">'.$_GET['content'].'</textarea><br/>';
