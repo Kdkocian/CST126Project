@@ -7,6 +7,8 @@
     $Pword = mysqli_real_escape_string($conn, $_POST['Pword']);
     echo $_POST['Uname'];
     echo $_POST['Pword'];
+    echo $Uname;
+    echo $Pword;
     if ($Uname == "")
     {
         echo " The Username cannot be empty";
