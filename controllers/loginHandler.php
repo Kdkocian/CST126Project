@@ -5,9 +5,10 @@
     
     $Uname = mysqli_real_escape_string($conn, $_POST['Uname']);
     $Pword = mysqli_real_escape_string($conn, $_POST['Pword']);
+    echo $_POST;
     if ($Uname == "")
     {
-        echo " The First Name cannot be empty";
+        echo " The Username cannot be empty";
     }
     if ($Pword == "")
     {
