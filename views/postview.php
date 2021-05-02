@@ -7,6 +7,7 @@
 <html>
     <head>
     	<title>Posts</title>
+        <link rel="stylesheet" type="text/css" href="../Resources/css/bootstrap.css"></link>
 	</head>
     <body>
         <?php

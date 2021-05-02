@@ -3,8 +3,8 @@ class myfunc
 {
     function dbConnect() {
         $servername = 'us-cdbr-iron-east-02.cleardb.net';
-        $username = 'b6ffb30b240cf8';
-        $password = '95210590';
+        $username = 'admin';
+        $password = 'moonknight093092';
         $dbname = 'heroku_7993010182d04ea';
         //creates connection
        $conn =  mysqli_connect($servername, $username, $password, $dbname);

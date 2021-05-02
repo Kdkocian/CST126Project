@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Add a Post</title>
+        <link rel="stylesheet" type="text/css" href="../Resources/css/bootstrap.css"></link>
 	</head>
     <body>
         <form action="../controllers/postManagement.php" method="POST">

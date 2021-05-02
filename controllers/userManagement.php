@@ -15,12 +15,13 @@
     }
     if(isset($_POST['Delete']))
     {
-        $id = mysqli_real_escape_string($conn, $_POST['ID']);
+        $id = mysqli_real_escape_string($conn, $_POST['Delete']);
         
         $sql = "DELETE FROM users WHERE ID = '$id'";
         mysqli_query($conn, $sql);
         
         mysqli_close($conn);
         header("Location: ../views/adminManagement.php");
-    } 
+    }
+
 ?>
