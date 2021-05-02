@@ -5,17 +5,24 @@
 		<title>Login Page</title>
 	</head>
 	<body>
-		<form action="../controllers/loginHandler.php" method="post">
+		<form>
+			<form action="../controllers/loginHandler.php" method="post">
 			<div class="form-group">
-			  <label for="Uname">Username</label>
-			  <input type="text" class="form-control" id="Uname" name = "Uname" placeholder="Enter Username">
+			  <label for="UserName">Username</label>
+			  <input type="text" class="form-control" id="UserName" name = "Uname" placeholder="Enter Username">
 			</div>
 			<div class="form-group">
-			  <label for="Pword">Password</label>
-			  <input type="password" class="form-control" id="Pname" name = "Pword" placeholder="Password">
+			  <label for="Password">Password</label>
+			  <input type="text" class="form-control" id="Password" name = "Pword" placeholder="Enter Password">
 			</div>
 			<button type="submit" class="btn btn-primary">Login</button>
 			<a href="../index.html">Main Menu</a>
 		  </form>
+			<label>UserName: </label>
+			<input type ="text" name = "Uname"><br>
+			<label>Password: </label>
+			<input type ="text" name = "Pword"><br>
+			<input type="submit" name="loginsubmit" value="Login">
+		
 	</body>
 </html>
